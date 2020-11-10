@@ -1,16 +1,12 @@
 pipeline {
-    agent {
-        docker {
-            image 'node:6-alpine'
-        }
-    }
+    agent any
     environment {
         CI = 'true'
     }
     stages {
         stage('Build') {
             steps {
-                sh 'npm -v'
+                echo "hello"
             }
         }
         
