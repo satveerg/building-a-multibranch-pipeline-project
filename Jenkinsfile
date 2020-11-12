@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                dir("/tmp") {
+                dir("${WORKSPACE}") {
                   sh "pwd"
               }
 
