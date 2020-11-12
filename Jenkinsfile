@@ -6,11 +6,13 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                docker.image('centos:7').inside {
+                docker.withRegistry('https://hub.docker.com/_/centos') {
+                  docker.image('centos:7').inside {
                     sh "echo hello"
                 }
             }
         }
         
     }
+}
 }
