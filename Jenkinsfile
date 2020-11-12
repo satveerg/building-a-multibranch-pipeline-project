@@ -6,7 +6,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'ls -l'
+                docker.image("centos").inside(){
+                    sh "echo hello"
+                }
             }
         }
         
